@@ -17,3 +17,9 @@
 #save {
     background: rgb(1, 8, 114)
 }
+
+.unsavebut,
+.notesbut {
+    background: white;
+    border-color: red;
+}

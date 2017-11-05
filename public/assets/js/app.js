@@ -35,9 +35,9 @@ $.getJSON("/saved", function(data) {
             '<div class="panel-heading" > <h3 class="panel-title" data-target="#popUp"' +
             'data-toggle="modal" data-id="' + data[i]._id + '">' + data[i].title + '</h3>' +
             '</div><hr><div class="panel-body"><p>' + data[i].summary + '</p> <a href="' +
-            data[i].link + ' target="blank">' + data[i].link + '</a> </div> <br> <button class="btn btn-danger"' +
-            ' data-id="' + data[i]._id + '"id="articleDelete">Unsave Article</button><button class="btn btn-primary"' +
-            ' id="noteBtn" data-id="' + data[i]._id + '">Article Notes</button></div>');
+            data[i].link + ' target="blank">' + data[i].link + '</a> </div> <br> <button class="btn unsavebut"' +
+            ' data-id="' + data[i]._id + '"id="articleDelete">Remove</button><button class="btn notesbut"' +
+            ' id="noteBtn" data-id="' + data[i]._id + '">Note</button></div>');
     }
 });
 
