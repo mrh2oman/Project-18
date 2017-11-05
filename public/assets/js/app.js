@@ -1,5 +1,6 @@
 
 $.getJSON("/articles", function(data) {
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
         $("#articles").append('<div class="panel panel-default">' +
             '<div class="panel-heading" ><h3 class="panel-title" data-target="#popUp"' +
