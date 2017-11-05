@@ -1,0 +1,140 @@
+body {
+    font-family: 'Ramaraja', serif;
+}
+
+.container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.btn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+}
+
+#deleteArt {
+    margin-left: 10px;
+}
+
+
+/*========   ARTICLE PANEL STYLE ==========*/
+
+#artTitle {
+    font-size: 35px;
+}
+
+#artSummary {
+    font-size: 25px;
+    font-style: italic;
+}
+
+#artLink {
+    font-size: 20px;
+}
+
+#articles {
+    height: 700px;
+}
+
+.panel {
+    box-shadow: 10px 10px 5px grey;
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+/*========  NAVBAR STYLE   =========*/
+
+.navbar {
+    background-color: rgba(250, 235, 215, 0.8);
+}
+
+.navbar-brand {
+    font-size: 40px;
+    color: #596ccc !important;
+}
+
+.nav-link {
+    font-size: 50px;
+    float: right;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 10px;
+    float: right;
+}
+
+
+/*=======   JUMBOTRON STYLE ===========*/
+
+.jumbotron {
+    background-color: rgba(250, 215, 215, 0.95);
+}
+
+#indexJumbo {
+    padding-left: 60px;
+}
+
+#jumboTitle {
+    color: cornflowerblue;
+}
+
+
+/*========   MODAL STYLE   ========*/
+
+#modalBodyA {
+    text-align: center;
+}
+
+#modalTitle {
+    font-size: 30px;
+    padding: 10px 10px 0px 10px
+}
+
+#modalBody {
+    background-color: #adb8b8;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #e0e6e9;
+}
+
+#titleinput {
+    margin-bottom: 20px;
+}
+
+#titleinput,
+#bodyinput {
+    padding: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+textarea,
+input {
+    width: 100%;
+}
+
+input {
+    height: 36px;
+    font-size: 24px;
+}
+
+textarea {
+    height: 200px;
+    font-size: 18px;
+}
