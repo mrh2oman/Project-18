@@ -2,35 +2,40 @@
 $.getJSON("/articles", function(data) {
     console.log(data);
     for (var i = 0; i < data.length; i++) {
-        $("#articles").append('<div class="panel panel-default">' +
-            '<div class="panel-heading" ><h3 class="panel-title" data-target="#popUp"' +
+        $("#articles").append(
+            '<div class="panel panel-default">' +
+            '<div class="panel-heading" > <h3 class="panel-title" data-target="#popUp"' +
             'data-toggle="modal"  data-id="' + data[i]._id + '">' + data[i].title + '</h3>' +
-            '</div><hr><div class="panel-body"><p>' + data[i].summary + '</p><a href="' +
-            data[i].link + ' target="blank">' + data[i].link + '</a></div><br><button class="btn btn-success"' +
-            ' data-id="' + data[i]._id + '"id="save">Save Article</button></div>');
+            '</div><hr> <div class="panel-body"><p>' + data[i].summary + 
+            '</p><div class ="container"> <a href="' + data[i].link + ' ">' + 'Article Link' + '</a></div></div><br><div class ="container saved"><button class="btn btn-success"' +
+            ' data-id="' + data[i]._id + '"id="save">Save Article</button></div></div>');
+            console.log(data[i].link);
     }
 });
 
 $(document).on("click", "#save", function() {
-    $("#modalNotesA").empty();
+    $("#modalConfirm").empty();
     var articleIdToSave = $(this).attr("data-id");
     $("#popUp").modal('show');
     $("#modalConfirm").append("<h4> Your Article has been saved. Please click the save link to view. </h4>");
-    $("#modalConfirm").append("<a href='saved.html'> View Saved Articles </a>");
+    $("#modalConfirm").append("<a href='saved.html'> View Saved Articles </a>");    
     $.ajax({
         method: "POST",
         url: "/saved/" + articleIdToSave,
+        
     }).done(function(saved) {
+        
     });
 });
 
 $.getJSON("/saved", function(data) {
     for (var i = 0; i < data.length; i++) {
-        $("#savedArticles").append('<div class="panel panel-default">' +
-            '<div class="panel-heading" ><h3 class="panel-title" data-target="#popUp"' +
+        $("#savedArticles").append(
+            '<div class="panel panel-default">' +
+            '<div class="panel-heading" > <h3 class="panel-title" data-target="#popUp"' +
             'data-toggle="modal" data-id="' + data[i]._id + '">' + data[i].title + '</h3>' +
-            '</div><hr><div class="panel-body"><p>' + data[i].summary + '</p><a href="' +
-            data[i].link + ' target="blank">' + data[i].link + '</a></div><br><button class="btn btn-danger"' +
+            '</div><hr><div class="panel-body"><p>' + data[i].summary + '</p> <a href="' +
+            data[i].link + ' target="blank">' + data[i].link + '</a> </div> <br> <button class="btn btn-danger"' +
             ' data-id="' + data[i]._id + '"id="articleDelete">Unsave Article</button><button class="btn btn-primary"' +
             ' id="noteBtn" data-id="' + data[i]._id + '">Article Notes</button></div>');
     }
